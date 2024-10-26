@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарілка Щастя - Ресторан</title>
+</head>
+<body>
+  <!-- Навигація -->
+  <header>
+    <nav>
+        <img src="Sources/Images/Logo.png" alt="Логотип Тарілка Щастя" class="logo">
+        <ul>
+            <li><a href="#menu" class="active">Меню</a></li>
+            <li><a href="#booking">Замовлення столиків</a></li>
+            <li><a href="#reviews">Відгуки</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Банер -->
+<section class="banner">
+    <img 
+    src="Sources/Images/Banner.png" 
+    alt="banner"
+    height="300"
+    >
+</section>
+
+<!-- Привітальне повідомлення -->
+<section class="welcome">
+    <h1>Ласкаво просимо до ресторану 'Тарілка Щастя'!</h1>
+    <p>Ми пропонуємо вам насолодитися смачними стравами та приємною атмосферою.</p>
+</section>
+
+<!-- Послуги -->
+<section class="services">
+    <h2>Наші послуги</h2>
+    <ul>
+        <li>Дитяче меню</li>
+        <li>Банкетний зал</li>
+        <li>Безкоштовний wi-fi</li>
+    </ul>
+</section>
+
+  <!-- Контейнер для годин роботи и форми бронировання -->
+  <section class="info-container">
+    <!-- Години роботи -->
+    <div class="working-hours">
+        <h2>Ми чекаємо на вас!</h2>
+        <table>
+            <tr>
+                <th>Дні тижня</th>
+                <th>Години роботи</th>
+            </tr>
+            <tr>
+                <td>ПН - СБ</td>
+                <td>11:00 до 22:00</td>
+            </tr>
+            <tr>
+                <td>НД</td>
+                <td>12:00 до 22:00</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Форма швидкого бронировання -->
+    <div class="quick-booking">
+        <h2>Швидке бронювання</h2>
+        <form>
+            <label for="phone">введіть номер телефона</label>
+            <input type="tel" id="phone" name="phone" placeholder="введіть номер телефона" required>
+
+            <label for="name">введіть ім'я</label>
+            <input type="text" id="name" name="name" placeholder="введіть ім'я" required>
+
+            <button type="submit">Забронювати</button>
+        </form>
+    </div>
+</section>
+<!-- Посилання на сторінку з інформацією о проекті -->
+<footer>
+    <p>Опис предметної галузі: <a href="project-info.html">Ознайомитись</a></p>
+</footer>
+</body>
+</html>
