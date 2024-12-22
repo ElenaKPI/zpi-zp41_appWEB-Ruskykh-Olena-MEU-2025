@@ -1,87 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Тарілка Щастя - Ресторан</title>
+    <style>
+        * {
+            font-family: 'Roboto';
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .roboto-regular {
+            font-family: "Roboto", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .roboto-bold {
+            font-family: "Roboto", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #D9D9D9;
+            position: sticky;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            height: 120px;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 36px;
+            font-weight: bold;
+            color: #550F0F;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a94a4a;
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #D9D9D9;
+            overflow: hidden;
+            margin-top: 24px;
+        }
+
+        .banner-image {
+            width: 70%;
+            max-width: 1019px;
+            height: auto;
+        }
+
+        .welcome {
+            color: #000000;
+            font-size: 32px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 27px;
+        }
+
+        .welcome p {
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        #highlight {
+            color: #DE2B2B;
+        }
+
+        .services {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            color: #7B1C1C;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .services ul {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 0;
+            margin: 0;
+            list-style: disc;
+        }
+
+        .services ul li {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            list-style-position: inside;
+            text-align: center;
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 150px;
+            margin: 40px auto;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        /* Стили для секции "Ми чекаємо на вас" */
+        .working-hours {
+            flex: 1;
+            text-align: center;
+        }
+
+        .working-hours h2+table {
+            margin-top: 10px;
+        }
+
+        .working-hours h2 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .working-hours table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            background: linear-gradient(135deg, #ffffff, #dec8cf);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .working-hours th,
+        .working-hours td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+
+        .working-hours th {
+            background-color: #891313;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .working-hours tr:hover {
+            background-color: rgba(255, 204, 204, 0.8);
+            transition: background-color 0.3s ease;
+        }
+
+        .working-hours td:first-child {
+            font-weight: bold;
+            color: #891313;
+        }
+
+        .working-hours td {
+            text-align: center;
+        }
+
+
+        /* Стили для секции "Швидке бронювання" */
+        .quick-booking {
+            flex: 1;
+            text-align: center;
+        }
+
+        .quick-booking h2 {
+            font-size: 36px;
+            color: #891313;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .quick-booking input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            position: relative;
+        }
+
+        .quick-booking label {
+            display: block;
+            font-size: 16px;
+            text-align: left;
+            width: 80%;
+            margin-bottom: 5px;
+            margin-left: 44px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 15px;
+            padding: 5px 10px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .input-wrapper input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            flex: 1;
+            background-color: #D9D9D9;
+        }
+
+        .input-wrapper input:focus {
+            outline: none;
+            border: 2px solid #DD1616;
+            box-shadow: 0 0 8px rgba(221, 22, 22, 0.5);
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .input-wrapper>img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Стили для кнопки */
+        .quick-booking button {
+            padding: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #DD1616;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 50%;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .quick-booking button:hover {
+            background-color: #a94a4a;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-image: url('Sources/Images/footer-background.jpg');
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+
+
+        footer a[href="project-info.html"] {
+            color: #3c2269;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Навигація -->
-  <header>
-    <nav>
-        <img src="Sources/Images/Logo.png" alt="Логотип Тарілка Щастя" class="logo">
+    <!-- Навигація -->
+    <header>
+        <nav>
+            <img src="Sources/Images/Logo.png" alt="Логотип Тарілка Щастя" class="logo">
+            <ul>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#booking">Замовлення столиків</a></li>
+                <li><a href="#reviews">Відгуки</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Банер -->
+    <section class="banner">
+        <img src="Sources/Images/Banner.png" alt="Ресторан Тарілка Щастя" class="banner-image">
+    </section>
+
+    <!-- Привітальне повідомлення -->
+    <section class="welcome">
+        <p>Ласкаво просимо до ресторану '<span id="highlight">Тарілка Щастя</span>'!</p>
+        <p>Ми пропонуємо вам насолодитися смачними стравами та приємною атмосферою.</p>
+    </section>
+
+    <!-- Послуги -->
+    <section class="services">
+        <h2>Наші послуги</h2>
         <ul>
-            <li><a href="#menu" class="active">Меню</a></li>
-            <li><a href="#booking">Замовлення столиків</a></li>
-            <li><a href="#reviews">Відгуки</a></li>
-            <li><a href="#contacts">Контакти</a></li>
+            <li>Дитяче меню</li>
+            <li>Банкетний зал</li>
+            <li>Безкоштовний wi-fi</li>
         </ul>
-    </nav>
-</header>
+    </section>
 
-<!-- Банер -->
-<section class="banner">
-    <img 
-    src="Sources/Images/Banner.png" 
-    alt="banner"
-    height="300"
-    >
-</section>
+    <!-- Контейнер для годин роботи и форми бронировання -->
+    <section class="info-container">
+        <!-- Години роботи -->
+        <div class="working-hours">
+            <h2>Ми чекаємо на вас!</h2>
+            <table>
+                <tr>
+                    <th>Дні тижня</th>
+                    <th>Години роботи</th>
+                </tr>
+                <tr>
+                    <td>ПН - СБ</td>
+                    <td>11:00 до 22:00</td>
+                </tr>
+                <tr>
+                    <td>НД</td>
+                    <td>12:00 до 22:00</td>
+                </tr>
+            </table>
+        </div>
 
-<!-- Привітальне повідомлення -->
-<section class="welcome">
-    <h1>Ласкаво просимо до ресторану 'Тарілка Щастя'!</h1>
-    <p>Ми пропонуємо вам насолодитися смачними стравами та приємною атмосферою.</p>
-</section>
-
-<!-- Послуги -->
-<section class="services">
-    <h2>Наші послуги</h2>
-    <ul>
-        <li>Дитяче меню</li>
-        <li>Банкетний зал</li>
-        <li>Безкоштовний wi-fi</li>
-    </ul>
-</section>
-
-  <!-- Контейнер для годин роботи и форми бронировання -->
-  <section class="info-container">
-    <!-- Години роботи -->
-    <div class="working-hours">
-        <h2>Ми чекаємо на вас!</h2>
-        <table>
-            <tr>
-                <th>Дні тижня</th>
-                <th>Години роботи</th>
-            </tr>
-            <tr>
-                <td>ПН - СБ</td>
-                <td>11:00 до 22:00</td>
-            </tr>
-            <tr>
-                <td>НД</td>
-                <td>12:00 до 22:00</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- Форма швидкого бронировання -->
-    <div class="quick-booking">
-        <h2>Швидке бронювання</h2>
-        <form>
-            <label for="phone">введіть номер телефона</label>
-            <input type="tel" id="phone" name="phone" placeholder="введіть номер телефона" required>
-
-            <label for="name">введіть ім'я</label>
-            <input type="text" id="name" name="name" placeholder="введіть ім'я" required>
-
-            <button type="submit">Забронювати</button>
-        </form>
-    </div>
-</section>
-<!-- Посилання на сторінку з інформацією о проекті -->
-<footer>
-    <p>Опис предметної галузі: <a href="project-info.html">Ознайомитись</a></p>
-</footer>
+        <!-- Форма швидкого бронировання -->
+        <div class="quick-booking">
+            <h2>Швидке бронювання</h2>
+            <form>
+                <div class="input-wrapper">
+                    <img src="Sources/Images/Phone.png" alt="Phone Icon">
+                    <input type="tel" id="phone" name="phone" placeholder="введіть номер телефона" required>
+                </div>
+                <div class="input-wrapper">
+                    <img src="Sources/Images/Person.png" alt="Person Icon">
+                    <input type="text" id="name" name="name" placeholder="введіть ім'я" required>
+                </div>
+                <button type="submit" class="submit-button">Забронювати</button>
+            </form>
+        </div>
+    </section>
+    <!-- Посилання на сторінку з інформацією о проекті -->
+    <footer>
+        <p>Опис предметної галузі: <a href="project-info.html">Ознайомитись</a></p>
+    </footer>
 </body>
+
 </html>
