@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гумова таблична верстка</title>
+    <style>
+        table {
+            width: 90%; 
+            height: 80vh; 
+            border-collapse: collapse;
+            margin: 0 auto; 
+            table-layout: fixed;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header {
+            background-color: blue;
+            height: 10%; 
+        }
+
+        .sidebar {
+            background-color: yellow;
+            width: 10%; 
+        }
+
+        .footer {
+            background-color: blue;
+            height: 10%; 
+        }
+
+        .content {
+            background-color: white;
+        }
+
+        .empty-space {
+            background-color: white;
+            width: 5%; 
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="sidebar" rowspan="3">3</td>
+            <td class="header">1</td>
+            <td class="empty-space" rowspan="3"></td>
+        </tr>
+        <tr>
+            <td class="content">4</td>
+        </tr>
+        <tr>
+            <td class="footer">3</td>
+        </tr>
+    </table>
+</body>
+
+</html>

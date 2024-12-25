@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Flexbox</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            padding: 0px 20px 3px;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo span {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .info {
+            font-size: 14px;
+            color: #251d8f;
+            text-align: right;
+        }
+
+        .bottom-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: #fff;
+        }
+
+        .bottom-header a {
+            flex-grow: 1;
+            text-align: center;
+            padding: 10px 0px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+        }
+
+        .main {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #009fdc;
+            color: white;
+
+            border-radius: 5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration-color: #ccc0c1;
+            color: white;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #ffa500;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        .main-content h3 {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .main-content h3 img {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+
+        .course-option {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .course-option img {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+
+        .course-option div {
+            flex: 1;
+        }
+
+        .course-title {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .course-option p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .search-box {
+            flex: 1;
+            align-items: center;
+            background-color: #dc3545;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .search-box h3 {
+            margin-top: 0;
+        }
+
+        .search-box input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .image-text-section {
+            display: flex;
+            gap: 5px;
+            margin: 20px;
+        }
+
+        .image-container {
+            flex: -1;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 250px;
+        }
+
+        #text-container {
+            flex: 2;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .footer-block {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #20544a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="top-header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span>Навчальний центр - IT</span>
+            </div>
+            <div class="info">
+                Ми працюємо Пн-Пт з 10:00 до 19:00 Сб-Нд: Вихідний.
+            </div>
+        </div>
+        <div class="bottom-header">
+            <a href="#">Головна</a>
+            <a href="#">Акції</a>
+            <a href="#">Курси</a>
+            <a href="#">Про центр</a>
+            <a href="#">Контакти</a>
+            <a href="#">Ціни</a>
+            <a href="#">Блог</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Курси інженерного графіку</a></li>
+                <li><a href="#">Курси комп'ютерного моделювання</a></li>
+                <li><a href="#">Курси програмування</a></li>
+                <li><a href="#">Курси бухгалтерів</a></li>
+                <li><a href="#">Курси системного адміністрування</a></li>
+                <li><a href="#">Комп'ютер для початківців</a></li>
+                <li><a href="#">Курси створення сайтів</a></li>
+                <li><a href="#">Просування web сайтів (SEO)</a></li>
+                <li><a href="#">Курси менеджерів</a></li>
+                <li><a href="#">Курси графіки</a></li>
+                <li><a href="#">Створення сайту</a></li>
+                <li><a href="#">Курси дизайну</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h3><img src="person.png" alt="person">
+                <span>Нова форма навчання</span>
+            </h3>
+
+            <div class="course-option">
+                <img src="green.png" alt="green icon">
+                <div>
+                    <span class="course-title">Вибір будь-якого часу курсу.</span>
+                    <p>Проведення занять безпосередньо у слухача на дому або в офісі.</p>
+                </div>
+            </div>
+
+            <div class="course-option">
+                <img src="blue.png" alt="blue icon">
+                <div>
+                    <span class="course-title">Навчання за індивідуальними програмами.</span>
+                    <p>Ви вчите тільки те, що вам потрібно. Програма підбирається під вас!</p>
+                </div>
+            </div>
+
+            <div class="course-option">
+                <img src="red.png" alt="red icon">
+                <div>
+                    <span class="course-title">Безкоштовна установка ПЗ на ваш ноутбук або комп'ютер.</span>
+                    <p>Викладач встановить, а також налаштує потрібну програму для виконання домашнього завдання.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <h3>Знайти курс по інтересах</h3>
+            <p>Скористайтеся пошуком, щоб знайти потрібний вам курс або подивіться <a href="#"
+                    style="color: white; text-decoration: underline;">всі курси</a>.</p>
+            <input type="text" placeholder="Пошук курсів...">
+        </div>
+    </div>
+
+    <h2>Курси web - програмування в Києві.</h2>
+    <div class="image-text-section">
+
+        <div class="image-container">
+            <img src="web.png" alt="Web Programming">
+        </div>
+        <div id="text-container">
+            <p>
+                Ми шукаємо всіх тих, кому цікавий світ програмування! Хочете займатися розробкою програмного
+                забезпечення і побудовою web - сайтів? А, може, Ви вже робите все це і бажаєте додаткових знань або
+                вирішили підвищити свою кваліфікацію? Не біда, якщо ніколи і не пробували себе в подібному - команда IT
+                готова надавати свої послуги людям
+                будь-якого рівня знань. Якщо наші клієнти новачки, то ми почнемо заняття з основ, а якщо ж просунуті
+                користувачі, то вони починатимуть навчання з більш складного матеріалу, при цьому, не зупиняючись на
+                тому, що їм давно відомо. Теми для проведення занять дозволено вибирати на свій розсуд.
+            </p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-block">Ми на мапі</div>
+        <div class="footer-block">Зв'язок з нами</div>
+        <div class="footer-block">Корисні посилання</div>
+        <div class="footer-block">Популярне на блозі</div>
+    </footer>
+
+</body>
+
+</html>
