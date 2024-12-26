@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Лабораторна робота 3.1</title>
+</head>
+<body>
+    <h1>Лабораторна робота №3.1</h1>
+    <button onclick="showShippingMessage()">Завдання 1</button>
+    <button onclick="makeSuccessTransaction()">Завдання 2 (успішний кейс)</button>
+    <button onclick="makeFailTransaction()">Завдання 2 (неуспішний кейс)</button>
+    <button onclick="makeArrayFull()">Завдання 3 (повний масив)</button>
+    <button onclick="makeArraySlice()">Завдання 3 (частковий масив)</button>
+
+    <section id="tooltip-section">
+        <h3>Додавання підказки через контекстне меню</h3>
+        <p>
+            Це приклад тексту. Виділіть будь-яке слово чи фрагмент, натисніть праву кнопку миші та додайте підказку до виділеного тексту.
+        </p>
+        <div id="tooltip-container"></div>
+    
+        <!-- Контекстне меню -->
+        <div id="custom-context-menu" class="hidden">
+            <label for="tooltip-input">Введіть підказку:</label>
+            <input type="text" id="tooltip-input" placeholder="Підказка">
+            <button id="add-tooltip-btn">Додати підказку</button>
+        </div>
+    </section>
+</body>
+</html>
