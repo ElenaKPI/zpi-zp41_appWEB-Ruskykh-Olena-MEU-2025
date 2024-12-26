@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,7 @@
     <header>
         <nav>
             <img src="Sources/Images/Logo.png" alt="Логотип Тарілка Щастя" class="logo">
+            <span class="mobile-welcome desktop-hidden tablet-hidden">Ласкаво просимо до ресторану "Тарілка Щастя"!</span>
             <ul>
                 <li><a href="#menu">Меню</a></li>
                 <li><a href="#booking">Замовлення столиків</a></li>
@@ -27,28 +29,29 @@
     </header>
 
     <!-- Банер -->
-    <section class="banner">
+    <section class="banner mobile-hidden">
         <img src="Sources/Images/Banner.png" alt="Ресторан Тарілка Щастя" class="banner-image">
     </section>
 
     <!-- Привітальне повідомлення -->
-    <section class="welcome">
+    <section class="welcome mobile-hidden">
         <p>Ласкаво просимо до ресторану '<span id="highlight">Тарілка Щастя</span>'!</p>
         <p>Ми пропонуємо вам насолодитися смачними стравами та приємною атмосферою.</p>
     </section>
 
     <!-- Послуги -->
-    <section class="services">
+    <section class="services mobile-hidden">
         <h2 style="color: #891313; text-align: center;">Наші послуги</h2>
         <ul>
             <li>Дитяче меню</li>
             <li>Банкетний зал</li>
             <li>Безкоштовний wi-fi</li>
+            <li>Жива музика</li>
         </ul>
     </section>
 
     <!-- Контейнер для годин роботи и форми бронировання -->
-    <section class="info-container">
+    <section class="info-container mobile-hidden">
         <!-- Години роботи -->
         <div class="working-hours">
             <h2>Ми чекаємо на вас!</h2>
@@ -69,7 +72,7 @@
         </div>
 
         <!-- Форма швидкого бронировання -->
-        <div class="quick-booking">
+        <div class="quick-booking mobile-hidden">
             <h2>Швидке бронювання</h2>
             <form>
                 <div class="input-wrapper">
@@ -84,27 +87,30 @@
             </form>
         </div>
     </section>
+
     <!-- Посилання на сторінку з інформацією о проекті -->
-    <footer>
-        <p>Опис предметної галузі: <a href="project-info.html">Ознайомитись</a></p>
-    </footer>
-    <ul>
-        <li>
-            <a href="Additional/fixTable.html">Фіксована таблична верстка</a>
-        </li>
-        <li>
-            <a href="Additional/stretchTable.html">Гумова таблична верстка</a>
-        </li>
-        <li>
-            <a href="Additional/fixBlock.html">Фіксована блокова верстка</a>
-        </li>
-        <li>
-            <a href="Additional/stretchBlock.html">Гумова блокова верстка</a>
-        </li>
-        <li>
-            <a href="Additional/flexbox.html">Flexbox</a>
-        </li>
-    </ul>
+    <section class="mobile-hidden tablet-hidden">
+        <footer>
+            <p>Опис предметної галузі: <a href="project-info.html">Ознайомитись</a></p>
+        </footer>
+        <ul>
+            <li>
+                <a href="Additional/fixTable.html">Фіксована таблична верстка</a>
+            </li>
+            <li>
+                <a href="Additional/stretchTable.html">Гумова таблична верстка</a>
+            </li>
+            <li>
+                <a href="Additional/fixBlock.html">Фіксована блокова верстка</a>
+            </li>
+            <li>
+                <a href="Additional/stretchBlock.html">Гумова блокова верстка</a>
+            </li>
+            <li>
+                <a href="Additional/flexbox.html">Flexbox</a>
+            </li>
+        </ul>
+    </section>
 </body>
 
 </html>
