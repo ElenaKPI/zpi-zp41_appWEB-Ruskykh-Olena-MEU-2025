@@ -215,6 +215,30 @@
             color: #20544a;
             font-weight: bold;
         }
+
+        .main {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            flex-direction: row;
+            /* По умолчанию горизонтально */
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                /* Располагаем блоки вертикально */
+            }
+
+            .bottom-header {
+                flex-direction: column;
+                /* Меню кнопок также вертикально */
+                gap: 10px;
+                /* Отступы между элементами */
+            }
+        }
     </style>
 </head>
 
