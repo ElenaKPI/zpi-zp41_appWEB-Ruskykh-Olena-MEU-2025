@@ -106,16 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Відображення контекстного меню
     document.addEventListener("contextmenu", (event) => {
-        event.preventDefault();
+        event.preventDefault(); //відміняє стандартне контекстне меню
 
         const selection = window.getSelection();
         if (selection && selection.toString().trim().length > 0) {
             selectedText = selection.toString();
-            range = selection.getRangeAt(0);
+            range = selection.getRangeAt(0); // зберігає обєкт Range, що вказує на місце виділення в документі
 
-            contextMenu.style.top = `${event.pageY}px`;
+            contextMenu.style.top = `${event.pageY}px`; // позиціонування контекстоного меню
             contextMenu.style.left = `${event.pageX}px`;
-            contextMenu.classList.remove("hidden");
+            contextMenu.classList.remove("hidden"); // стає видимим
             contextMenu.style.display = "block";
         } else {
             contextMenu.classList.add("hidden");
